@@ -3,7 +3,7 @@
 clc;
 disp ('************************************************************');
 disp ('******** Looping Control by using for-end on Matlab ********');
-disp ('* by: (Putu Herdy Kurniawan), Student Reg. No.: (44419020) *');
+disp ('* by: (Vkurpmax), Student Reg. No.: () *');
 disp ('************************************************************');
 
 clear all;

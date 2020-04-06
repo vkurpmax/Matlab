@@ -1,7 +1,7 @@
 clc;
 disp ('****************************************************************');
 disp ('*    Calculate the total resistance of n parallel resistors    *');
-disp ('* by: (Muhammad Arjun Hendrawan), Student Reg. No.: (44419012) *');
+disp ('* by: (MAH), Student Reg. No.: () *');
 disp ('****************************************************************');
  
 disp('This program is used to calculate the total resistance of n parallel resistors');

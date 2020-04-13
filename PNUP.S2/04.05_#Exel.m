@@ -3,7 +3,7 @@ clc;
 clear all;
 disp ('****************************************************************');
 disp ('*        Branching Control by using switch-case on Matlab      *');
-disp ('*         by: (Exel),       Student Reg. No.: (44419006)       *');
+disp ('*         by: (E),       Student Reg. No.: ()       *');
 disp ('****************************************************************');
 disp (' ');
 fprintf ('    This program is used for calculate the total resistance\n    of some connected resistors.\n\n');

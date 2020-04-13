@@ -4,7 +4,7 @@ clc;
 disp ('***************************************************************');
 disp ('*     Branching Control by using SWITCH-CASE on Matlab        *');
 disp ('*                    Temperature Converter                    *');
-disp ('* by: (Putu Herdy Kurniawan),     Student Reg. No.: (44419020)*');
+disp ('* by: (vkurpmax),     Student Reg. No.: ()*');
 disp ('***************************************************************');
 disp (' ');
 

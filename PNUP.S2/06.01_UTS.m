@@ -9,9 +9,9 @@ disp (' ');
 disp ('Field of problem:');
 disp ('1. Linear Motion with Constant Velocity');
 disp ('2. Linear Motion with Constant Acceleration');
-disp ('3. Gerak Jatuh Bebas (GJB)');
-disp ('4. Massa Jenis');
-disp ('5. Gerak Vertikal ke Atas');
+disp ('3. Free Fall Motion');
+disp ('4. Density');
+disp ('5. Upward Vertical Motion');
 disp ('6. Kalor');
 disp ('7. Gelombang');
 disp ('8. Rangkaian Listrik Searah');
@@ -27,22 +27,22 @@ switch menu
     case 1
         disp ('<strong>Linear Motion with Constant Velocity</strong>');
         disp (' ');
-        disp ('Remember you may not input one variable only');
+        disp ('Remember you may empty for only one variable');
         disp ("If you don't have the number, just press <strong>Enter</strong>");
         disp (' ');
-        velocity = input('Input velocity (v) [meter/second]: ');
-        distance = input('Input distance (d) [meter]: ');
-        time = input('Input time (t) in second: ');
+        v = input('Input velocity (v) [meter/second]: ');
+        d = input('Input distance (d) [meter]: ');
+        t = input('Input time (t) [second]: ');
         disp ('-----------------------------------');
-        if isempty(velocity)
-            velocity = distance / time;
-            fprintf('The Velocity (v) is: <strong>%.2f [meter]/second</strong> \n', velocity);
-        elseif isempty(distance)
-            distance = velocity * time;
-            fprintf('The Distance (d) is: <strong>%.2f [meter]</strong> \n', distance);
+        if isempty(v)
+            v = d / t;
+            fprintf('The Velocity (v) is: <strong>%.2f [meter/second]</strong> \n', v);
+        elseif isempty(d)
+            d = v * t;
+            fprintf('The Distance (d) is: <strong>%.2f [meter]</strong> \n', d);
         else
-            time = distance / velocity;
-            fprintf('The time (t) is: <strong>%.2f [second]</strong> \n', time);
+            t = d / v;
+            fprintf('The time (t) is: <strong>%.2f [second]</strong> \n', t);
         end
         
     case 2
@@ -209,28 +209,100 @@ switch menu
         disp ('3. Time (t)');
         choice3 = input('Input your choice: ');
         disp (' ');
+        g = 9.81;
         if choice3 == 1
+           h = input('Input Height (h) [meter]: ');
+           Vf = sqrt(2*g*h);
+           fprintf('The Final Velocity (Vf) is: <strong>%.2f [meter/second]</strong> \n', Vf);
+        elseif choice3 == 2
            disp ('What do you know?');
-           disp ('1. Vi; a; t');
-           disp ('2. Vi; a; d');
-           choice2_1 = input('Input your choice: ');
-           disp ('---------------------------------------------');
-           if choice3_1 == 1
-               Vi = input('Input Initial Velocity (Vi) [meter/second]: ');
-               a = input('Input Acceleration (a) [meter/second^2]: ');
+           disp ('1. Vf');
+           disp ('2. t');
+           choice3_2 = input('Input your choice: ');
+           disp ('---------------------------------------------'); 
+           if choice3_2 == 1
+               Vf = input('Input Final Velocity (Vf) [meter/second]: ');
+               h = Vf^2 / (2*g);
+               disp ('---------------------------------------------');
+               fprintf('The Height (h) is: <strong>%.2f [meter]</strong> \n', h);
+           elseif choice3_2 == 2               
                t = input('Input Time (t) [second]: ');
-               Vf = Vi + a*t;
+               h = ((t^2) * g) / 2;
                disp ('---------------------------------------------');
-               fprintf('The Final Velocity is: <strong>%.2f [meter/second]</strong> \n', Vf);
-           elseif choice3_1 == 2
-               Vi = input('Input Initial Velocity (Vi) [meter/second]: ');
-               a = input('Input Acceleration (a) [meter/second^2]: ');
-               d = input('Input Displacement (d) [meter]: ');
-               Vf = sqrt(Vi^2 + 2*a*d);
-               disp ('---------------------------------------------');
-               fprintf('The Final Velocity is: <strong>%.2f [meter/second]</strong> \n', Vf);
-           else
-               disp('Please input the right number!');
+               fprintf('The Height (h) is: <strong>%.2f [meter]</strong> \n', h);
            end
+        elseif choice3 == 3                      
+            h = input('Input Height (h) [meter]: ');
+            t = sqrt((2*h)/g);
+            fprintf('The Time (t) is: <strong>%.2f [second]</strong> \n', t);
+        end
+        
+    case 4
+        disp ('<strong>Density</strong>');
+        disp (' ');
+        disp ('Remember you may empty for only one variable');
+        disp ("If you don't have the number, just press <strong>Enter</strong>");
+        disp (' ');
+        p = input('Input density (p) [kilogram/meter^3]: ');
+        m = input('Input mass (m) [kilogram]: ');
+        V = input('Input volume (V) [meter^3]: ');
+        disp ('-----------------------------------');
+        if isempty(p)
+            p = m / V;
+            fprintf('The Density (p) is: <strong>%.2f [kilogram/meter^3]</strong> \n', p);
+        elseif isempty(m)
+            m = p * V;
+            fprintf('The Mass (m) is: <strong>%.2f [kilogram]</strong> \n', m);
+        else
+            V = m / p;
+            fprintf('The Volume (V) is: <strong>%.2f [meter^3]</strong> \n', V);
+        end
+        
+    case 5
+        disp ('<strong>Vertical Upward Motion</strong>');
+        disp (' ');
+        disp ('To be known - Equations of Motion: ');
+        disp ('• tmax = Vi/g');
+        disp ('• hmax = Vi^2 / 2.g');
+        disp ('• Vf^2 = Vi^2 - 2.g.h');
+        disp ('------------------------------');
+        disp ('What do you want to find out?');
+        disp ('1. Time for Upward Movement (tmax)');
+        disp ('2. Initial Velocity (Vi)');
+        disp ('3. Maximum Height (hmax)');
+        disp ('4. Final Velocity (Vf)');
+        choice5 = input('Input your choice: ');
+        disp (' ');
+        g = 9.81;
+        if choice5 == 1
+            Vi = input('Input Initial Velocity (Vi) [meter/second]: ');
+            tmax = Vi/g;
+            fprintf('Time required to reach maximum height (tmax) is: <strong>%.2f [second]</strong> \n', tmax);
+        elseif choice5 == 2
+            disp ('What do you know?');
+            disp ('1. tmax');
+            disp ('2. hmax');
+            choice5_2 = input('Input your choice: ');
+            disp ('---------------------------------------------');
+            if choice5_2 == 1                
+                tmax = input('Input time for upward movement (tmax) [second]: ');               
+                Vi = tmax * g;
+                disp ('---------------------------------------------');
+                fprintf('The Initial Velocity (Vi) is: <strong>%.2f [meter/second]</strong> \n', Vi);
+            elseif choice5_2 == 2                
+                hmax = input('Input maximum height (hmax) [meter]: ');
+                Vi = sqrt(hmax * (2*g));
+                disp ('---------------------------------------------');
+                fprintf('The Initial Velocity (Vi) is: <strong>%.2f [meter/second]</strong> \n', Vi);
+            end
+        elseif choice5 == 3
+            Vi = input('Input Initial Velocity (Vi) [meter/second]: ');
+            hmax = Vi^2 / (2*g);
+            fprintf('Maximum height (hmax) is: <strong>%.2f [meter]</strong> \n', hmax);
+        elseif choice5 == 4
+            Vi = input('Input Initial Velocity (Vi) [meter/second]: ');
+            hmax = input('Input maximum height (hmax) [meter]: ');
+            Vf = sqrt(Vi^2 - 2*g*hmax);
+            fprintf('The Final Velocity (Vf) is: <strong>%.2f [meter/second]</strong> \n', Vf);
         end
 end

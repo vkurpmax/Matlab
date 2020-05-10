@@ -1,6 +1,6 @@
 disp ('*******');
 disp ('*        Input-Output Matrix Operations             *');
-disp ('* by: (Indri Puspita), Student Reg. No.: (44419009) *');
+disp ('* by: (IP), Student Reg. No.: () *');
 disp ('*******');
 disp ('');
 

@@ -3,7 +3,7 @@ clc;
 clear all;
 disp ('************************************************************');
 disp ('*              Mid Test Semester on Matlab                 *');
-disp ('* by: (Muhammad Fajri Akbar), Student Reg. No.: (44419016) *');
+disp ('* by: (MFA), Student Reg. No.: () *');
 disp ('************************************************************');
 disp (' ');
 disp (' ');

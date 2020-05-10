@@ -6,7 +6,7 @@ while loop ~= 0
 disp ('***************************************************************');
 disp ('*           Program of Basic Physics Problem Solver           *');
 disp ('*     Created as Mid Test Assignment of Matlab Programming    *');
-disp ('* by: (Putu Herdy Kurniawan),     Student Reg. No.: (44419020)*');
+disp ('* by: (vkurpmax),     Student Reg. No.: ()*');
 disp ('***************************************************************');
 disp (' ');
 

@@ -1,3 +1,5 @@
+%rank 1/24
+
 while true
     clc
     clear
